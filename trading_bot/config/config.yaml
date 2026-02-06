@@ -1,0 +1,29 @@
+# Trading Bot Configuration
+
+exchange:
+  name: "binance"
+  symbol: "BTC/USDT"
+  timeframe: "1h"
+  sandbox: true  # Set to true for paper trading on exchange testnet if available
+  options:
+    defaultType: 'future' # 'spot' or 'future'
+
+strategy:
+  name: "SmaRsiStrategy"
+  params:
+    sma_short: 50
+    sma_long: 200
+    rsi_period: 14
+    rsi_buy_threshold: 30
+    rsi_sell_threshold: 70
+
+risk:
+  risk_per_trade_pct: 1.0  # 1% of account balance per trade
+  max_drawdown_pct: 10.0   # Stop trading if equity drops by 10%
+  stop_loss_pct: 2.0       # default stop loss percentage
+  take_profit_pct: 4.0     # default take profit percentage
+
+system:
+  log_level: "INFO"
+  dry_run: true           # If true, orders are only logged, not sent to exchange
+  data_dir: "data"

@@ -1,0 +1,12 @@
+{
+    "name": "impact-high-school",
+    "version": "1.0.0",
+    "description": "Impact High School Website with AI Tutor",
+    "scripts": {
+        "dev": "vercel dev",
+        "deploy": "vercel deploy --prod"
+    },
+    "keywords": [],
+    "author": "Impact High School",
+    "license": "ISC"
+}

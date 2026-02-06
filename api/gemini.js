@@ -15,7 +15,7 @@ export default async function handler(req) {
         const { prompt } = await req.json();
 
         // Get the API key from environment variables
-        const API_KEY = process.env.GEMINI_API_KEY;
+        const API_KEY = process.env.GEMINI_API_KEY || process.env.apikey || process.env.APIKEY;
 
         if (!API_KEY) {
             return new Response(JSON.stringify({ error: 'Server configuration error: Missing API Key' }), {
